@@ -1,14 +1,8 @@
 function stringChop(str, size) {
-  if (str === null) {
-    return [];
-  }
-  const result = [];
-  let i = 0;
-
-  while (i < str.length) {
-    
-    result.push(str.substring(i, i + len));
-    i += len;
+  if (!str || size <= 0) return [];
+  let result = [];
+  for (let i = 0; i < str.length; i += size) {
+    result.push(str.slice(i, i + size));
   }
   return result;
 }
